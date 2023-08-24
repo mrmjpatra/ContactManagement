@@ -15,12 +15,13 @@ function App() {
 
 
   return (
-    <div className="flex gap-2">
+    <div className="grid grid-cols-[20%,80%]">
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
-              <Sidebar/>
+            <Sidebar />
             <Routes>
+              <Route path='/' element={<h1 className='p-2 flex items-center font-bold text-2xl'>Welcome to Contact Mangement App</h1>}/>
               <Route path='/contacts' >
                 <Route path='' element={<Contact />} />
                 <Route path='create' element={<CreateContact />} />
